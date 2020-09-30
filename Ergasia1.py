@@ -35,15 +35,3 @@ print("Vertical SOS",vertical_counter)
 print("Diagonal SOS",diagonal_counter)
 
     
-
-
-
-    
-
-
-        
-
-
-            
-
-
