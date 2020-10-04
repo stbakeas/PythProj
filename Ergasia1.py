@@ -1,5 +1,5 @@
 import random
-matrix_dimension=10
+matrix_dimension=3
 
 #Matrix Creation
 basic_matrix=[[random.choice(("S","O")) for x in range(matrix_dimension)] for i in range(matrix_dimension)] 
@@ -11,7 +11,8 @@ for i in basic_matrix:
 new_list_horizontal=[]
 new_list_vertical=[]
 new_list_diagonal=[]
-horizontal_counter,vertical_counter,diagonal_counter=0,0,0
+new_list_reverse_diagonal=[]
+horizontal_counter,vertical_counter,diagonal_counter,reverse_diagonal_counter=0,0,0,0
 for i in range(matrix_dimension):
   for j in range(matrix_dimension-2):
     new_list_horizontal.append(basic_matrix[i][j]+basic_matrix[i][j+1]+basic_matrix[i][j+2])
@@ -28,6 +29,15 @@ for i in range(matrix_dimension-2):
     diagonal_counter+=new_list_diagonal.count("SOS")
     new_list_diagonal.clear()
 
+for i in range(matrix_dimension-2):
+  for j in range(matrix_dimension-1,1,-1):
+    new_list_reverse_diagonal.append(basic_matrix[i][j]+basic_matrix[i+1][j-1]+basic_matrix[i+2][j-2])
+  reverse_diagonal_counter+=new_list_reverse_diagonal.count("SOS")
+  new_list_reverse_diagonal.clear()
+
+
+diagonal_counter+=reverse_diagonal_counter   
+
 
   
 print("Horizontal SOS",horizontal_counter)
@@ -35,3 +45,15 @@ print("Vertical SOS",vertical_counter)
 print("Diagonal SOS",diagonal_counter)
 
     
+
+
+
+    
+
+
+        
+
+
+            
+
+
