@@ -1,6 +1,6 @@
 import random
 
-matrix_dimension=4
+matrix_dimension=10
 
 #Eπιστρέφει την i-οστή στήλη σε μορφή list
 def column(matrix,i):
